@@ -5,7 +5,7 @@
         <button v-on:click="changeInputValue">cambiar</button>
         <button v-on:click="valueInput = 'cambio inline'">cambiar inline</button>
         <p>Valor del input: <strong>{{ valueInput }}</strong></p>
-        <p>Tamanio: {{ valueInput.length }}</p>
+        <p v-if="valueInput.length >0">Tamanio: {{ valueInput.length }}</p>
         <!---
         <input type="text" placeholder="escribe aqui" v-model="firstName" />
         <input type="text" placeholder="escribe aqui" v-model="lastName" />
