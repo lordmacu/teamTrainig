@@ -5,8 +5,15 @@
         <button v-on:click="changeInputValue">cambiar</button>
         <button v-on:click="valueInput = 'cambio inline'">cambiar inline</button>
         <p>Valor del input: <strong>{{ valueInput }}</strong></p>
-        <p v-if="valueInput.length >0">Tamanio: {{ valueInput.length }}</p>
+       
+        
         <!---
+        <p v-if="valueInput.length >0">Tamanio: {{ valueInput.length }}</p>
+
+        <div>
+            <span v-for="letter in valueInput" :key="letter">{{letter}}</span>
+        </div>
+        
         <input type="text" placeholder="escribe aqui" v-model="firstName" />
         <input type="text" placeholder="escribe aqui" v-model="lastName" />
         <p>Fullname: <strong>{{ fullName }}</strong> </p>
@@ -93,5 +100,54 @@ li {
 
 a {
     color: #42b983;
+}
+
+div span:nth-child(1) {
+  color: red;
+}
+
+div span:nth-child(2) {
+  color: green;
+}
+
+div span:nth-child(3) {
+  color: blue;
+}
+
+div span:nth-child(4) {
+  color: red;
+}
+
+div span:nth-child(5) {
+  color: green;
+}
+
+div span:nth-child(6) {
+  color: blue;
+}
+
+div span:nth-child(7) {
+  color: red;
+}
+
+div span:nth-child(8) {
+  color: green;
+}
+
+div span:nth-child(9) {
+  color: blue;
+}
+
+
+div span:nth-child(10) {
+  color: pink;
+}
+
+div span:nth-child(11) {
+  color: yellow;
+}
+
+div span:nth-child(12) {
+  color: blueviolet;
 }
 </style>
