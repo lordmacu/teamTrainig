@@ -1,6 +1,8 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld :type="10" msg="Welcome to Your Vue.js App"/>
+    <div>
+        <div style="background-color: yellow;">Mensg: {{msg}} <button @click="callFromParent">Call Child method</button></div>
+        <HelloWorld ref="child" @fromChild="fromChild" :type="10" msg="Welcome to Your Vue.js App"/>
+    </div>
 </template>
 
 <script>
@@ -10,6 +12,20 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data: function () {
+    return {
+        msg:''
+    }
+  },
+  methods: {
+    fromChild(value) {
+        this.msg = value.msg
+        console.log('fromChild ',value)
+    },
+    callFromParent() {
+        this.$refs.child.callFromParent('valor desde el padre');
+    }
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div class="hello">
         <h1>{{ msg }}</h1>
-        <input type="text" placeholder="escribe aqui" v-model="valueInput" />
+        <input  type="text" placeholder="escribe aqui" @change="changeInline"  v-model="valueInput" />
         <button v-on:click="changeInputValue">cambiar</button>
         <button v-on:click="valueInput = 'cambio inline'">cambiar inline</button>
         <p>Valor del input: <strong>{{ valueInput }}</strong></p>
@@ -10,6 +10,13 @@
         <input type="text" placeholder="escribe aqui" v-model="firstName" />
         <input type="text" placeholder="escribe aqui" v-model="lastName" />
         <p>Fullname: <strong>{{ fullName }}</strong> </p>
+        -->
+        
+        
+        <!--
+        
+                <button @click="callParent">llamando al padre</button>
+
         -->
     </div>
 </template>
@@ -46,6 +53,16 @@ export default {
     methods: {
         changeInputValue() {
             this.valueInput = 'cambiando valor';
+        },
+        changeInline(){
+            console.log('---- cambiando valor inline ----', this.valueInput);
+        },
+        callParent(){
+            this.$emit('fromChild',{ msg: this.valueInput })
+        },
+        callFromParent(value){
+            this.valueInput = value;
+            console.log('---- llamando al hijo ----');
         }
     },
     created() {
