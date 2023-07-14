@@ -3,6 +3,7 @@
         <h1>{{ msg }}</h1>
         <input type="text" placeholder="escribe aqui" v-model="valueInput" />
         <button v-on:click="changeInputValue">cambiar</button>
+        <button v-on:click="valueInput = 'cambio inline'">cambiar inline</button>
         <p>Valor del input: <strong>{{ valueInput }}</strong></p>
         <p>Tamanio: {{ valueInput.length }}</p>
         <!---
